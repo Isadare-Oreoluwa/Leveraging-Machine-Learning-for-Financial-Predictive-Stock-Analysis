@@ -1,68 +1,52 @@
-# 📈 Leveraging Machine Learning for Financial & Predictive Stock Analysis
+# 🌾 Leveraging Machine Learning for Predicting Agricultural Trade Flows
 
 ## 📌 Overview
 
-This project applies statistical analysis and machine learning to evaluate corporate financial performance and predict stock price movements. Using exploratory data analysis, feature engineering, and predictive modelling, it identifies key financial drivers of stock returns and generates insights to support data-driven investment decisions.
+This project applies machine learning techniques to predict agricultural trade flows between Nigeria and its trading partners. Using economic, demographic, and geographic indicators, it identifies the key drivers of trade and evaluates the performance of multiple predictive models to support data-driven trade analysis.
 
-The project demonstrates an end-to-end machine learning workflow, from data preparation and model development to model evaluation and interpretation.
+The project demonstrates an end-to-end machine learning workflow, from data preparation and exploratory analysis to model development, evaluation, and interpretation.
 
 ---
 
 ## 📂 Dataset
 
-The analysis uses a financial dataset obtained from **Kaggle**, containing financial statements and market information for multiple listed companies.
-
-**Dataset Source:**  
-https://www.kaggle.com/datasets/pacificrm/financial-sheets
+The analysis uses a comprehensive agricultural trade dataset containing economic, demographic, and geographic variables influencing bilateral trade between Nigeria and its trading partners.
 
 ### Dataset Includes
 
-- Annual and quarterly financial statements
-- Stock prices and market capitalisation
-- Financial ratios covering profitability, leverage, efficiency, and growth
-- Financial data at **T₀** with stock performance measured at **T₁**
+- Import and export values (USD)
+- GDP of Nigeria and partner countries
+- Exchange rates
+- Population statistics
+- Distance between trading partners
+- Shared language indicators
+- Landlocked status and other geographic variables
 
 ### Dataset Summary
 
-- **Observations:** ~3,000 company-quarter records
-- **Features:** 9 financial indicators
-- **Target Variable:** `price_change_%`
-- **Additional Variables:** Company name and reporting period
-
-### Key Features
-
-- Return on Capital Employed (ROCE)
-- Operating Profit Margin (OPM)
-- Asset Turnover (ATO)
-- Return on Assets (ROA)
-- Debt-to-Equity Ratio
-- EPS Growth (3 Years)
-- PEG Ratio
-- Market Capitalisation
-- Composite Efficiency Score
+- **Study Period:** 1996–2021
+- **Country:** Nigeria and its agricultural trading partners
+- **Target Variables:** Import and Export Trade Values
+- **Features:** Economic, demographic, and geographic indicators
 
 ---
 
 ## 🤖 Machine Learning Models
 
-The project compares the performance of several regression algorithms:
+The project compares the performance of several machine learning algorithms:
 
 - Linear Regression
 - Ridge Regression
 - Lasso Regression
-- Elastic Net Regression
 - Random Forest Regressor
 - Gradient Boosting Regressor
-- XGBoost
 - Multi-Layer Perceptron (MLP)
 
 ### Model Evaluation Metrics
 
 - R² (Coefficient of Determination)
+- Mean Squared Error (MSE)
 - Root Mean Squared Error (RMSE)
-- Mean Absolute Error (MAE)
-
-Hyperparameter optimisation was performed using **GridSearchCV** with cross-validation.
 
 ---
 
@@ -72,49 +56,49 @@ Hyperparameter optimisation was performed using **GridSearchCV** with cross-vali
 
 **Random Forest Regressor**
 
-- **R²:** ~0.23
-- **RMSE:** ~6.05
+- **R²:** 0.75
+- **MSE:** 3.61 × 10¹⁵
 
-### Key Drivers of Stock Price Changes
+### Key Drivers of Agricultural Trade
 
-- Market Capitalisation
-- Return on Capital Employed (ROCE)
-- Return on Assets (ROA)
-- Debt-to-Equity Ratio
+- GDP of trading partners
+- Population size
+- Exchange rates
+- Geographic distance
 
 ### Key Findings
 
-- Linear models showed limited predictive performance, suggesting weak linear relationships between financial metrics and stock price movements.
-- Tree-based models captured non-linear relationships more effectively and produced stronger predictions.
-- Profitability indicators were among the strongest predictors of future stock performance.
-- The final model generated a ranked list of companies with the highest predicted quarterly stock price appreciation.
+- Random Forest produced the strongest predictive performance among the models evaluated.
+- Economic indicators, particularly GDP, were the strongest determinants of agricultural trade.
+- Geographic distance remained a significant predictor of bilateral trade flows.
+- Machine learning models effectively captured complex relationships between economic and geographic variables.
 
 ---
 
 ## 📁 Repository Structure
 
 ```text
-Leveraging-Machine-Learning-for-Financial-Predictive-Stock-Analysis/
+Leveraging-Machine-Learning-for-Predicting-Agricultural-Trade-Flows/
 │
 ├── Data and Code/
-│   ├── Dataset/
-│   │   ├── Financial Dataset.xlsx
-│   │   └── ...
-│   │
-│   └── Financial analysis.ipynb
+│   ├── Agricultural Trade Dataset.xlsx
+│   ├── Agricultural Trade Flow Prediction.ipynb
+│   └── Agricultural Trade Visualisation.ipynb
 │
-├── Comprehensive Financial Analysis Report.pdf
+├── Agricultural Trade Flows Prediction Report.pdf
 │
 └── README.md
 ```
+
+> Replace the notebook names above with the actual filenames in your repository if they differ.
 
 ---
 
 ## 🚀 Getting Started
 
-### View the Project
+### Viewing the Project
 
-Browse the repository to access the report, dataset, and Jupyter Notebook.
+Browse the repository to access the report, dataset, and Jupyter notebooks. Files can be viewed directly on GitHub or downloaded for offline use.
 
 ### Download the Repository
 
@@ -127,26 +111,41 @@ To download all project files:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/Isadare-Oreoluwa/Leveraging-Machine-Learning-for-Financial-Predictive-Stock-Analysis.git
+git clone https://github.com/Isadare-Oreoluwa/Leveraging-Machine-Learning-for-Predicting-Agricultural-Trade-Flows.git
 ```
 
 ### Install Required Libraries
 
 ```bash
-pip install pandas numpy scikit-learn matplotlib seaborn xgboost
+pip install pandas numpy scikit-learn matplotlib seaborn
 ```
 
-### Run the Notebook
+### Run the Notebooks
 
-1. Open **Financial analysis.ipynb** in Jupyter Notebook or JupyterLab.
-2. Ensure the dataset folder remains inside the **Data and Code** directory.
-3. Run the notebook cells sequentially to reproduce the analysis and machine learning models.
+1. Open the Jupyter notebooks in the **Data and Code** folder.
+2. Update the dataset file path in each notebook to match the location of the Excel file on your local machine.
+
+For example, replace:
+
+```python
+df = pd.read_excel('/content/Agricultural Trade Dataset.xlsx')
+```
+
+with:
+
+```python
+df = pd.read_excel('Data and Code/Agricultural Trade Dataset.xlsx')
+```
+
+or use the appropriate file path for your system.
+
+3. Run the notebook cells sequentially to reproduce the data preparation, exploratory analysis, visualisations, model training, and predictions.
 
 ---
 
 ## 📄 Report
 
-The accompanying report covers:
+The project report includes:
 
 - Exploratory Data Analysis
 - Feature Engineering
@@ -154,30 +153,32 @@ The accompanying report covers:
 - Machine Learning Model Development
 - Model Evaluation
 - Feature Importance Analysis
-- Investment Insights and Recommendations
+- Trade Policy Insights and Recommendations
 
 📄 **View the Report**
 
-https://github.com/Isadare-Oreoluwa/Leveraging-Machine-Learning-for-Financial-Predictive-Stock-Analysis/blob/main/Comprehensive%20Financial%20Analysis%20Report.pdf
+https://github.com/Isadare-Oreoluwa/Leveraging-Machine-Learning-for-Predicting-Agricultural-Trade-Flows/blob/main/Agricultural%20Trade%20Flows%20Prediction%20Report.pdf
 
 ---
 
 ## 💻 Code & Data
 
-The repository includes all resources required to reproduce the analysis.
+The repository contains all resources required to reproduce the analysis.
 
-- **Dataset/** – Financial datasets used in the project.
-- **Financial analysis.ipynb** – Data preparation, exploratory analysis, machine learning modelling, evaluation, and prediction workflow.
+- **Agricultural Trade Dataset.xlsx** – Dataset used for model development and evaluation.
+- **Jupyter Notebooks** – Data preparation, exploratory analysis, visualisation, machine learning modelling, and prediction workflow.
+
+> **Note:** The notebooks were originally developed in a cloud environment. If running them locally, update the dataset file paths before executing the code.
 
 📂 **Browse the Repository**
 
-https://github.com/Isadare-Oreoluwa/Leveraging-Machine-Learning-for-Financial-Predictive-Stock-Analysis
+https://github.com/Isadare-Oreoluwa/Leveraging-Machine-Learning-for-Predicting-Agricultural-Trade-Flows
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project was developed for educational and portfolio purposes. The predictive models are intended to support financial analysis and should not be interpreted as investment or financial advice.
+This project was developed for educational and portfolio purposes. The predictive models are intended to support trade analysis and should not be interpreted as definitive forecasts or policy recommendations.
 
 ---
 
